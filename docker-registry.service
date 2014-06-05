@@ -1,0 +1,6 @@
+[Unit]
+Description=Docker Registry
+
+[Service]
+ExecStart=/usr/bin/gunicorn-python2 -k gevent -b 0.0.0.0:5000 -w 1 docker_registry.wsgi:application
+
